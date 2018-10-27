@@ -16,7 +16,7 @@ namespace WebPushNotif.Demo.Controllers
         /// <param name="subscription">oggetto sottoscrizione fornito dal client</param>
         /// <returns>IActionResult</returns>
         [HttpPost]
-        public IActionResult SubscribeClient(Lib.Net.Http.WebPush.PushSubscription subscription)
+        public IActionResult SubscribeClient([FromBody]Lib.Net.Http.WebPush.PushSubscription subscription)
         {
             //validazione argomenti
             if (subscription == null)

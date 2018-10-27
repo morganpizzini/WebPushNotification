@@ -47,6 +47,16 @@ namespace WebPushNotif.Demo
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            //Abilitazione CORS
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
+
             services.AddMemoryCache();
             services.AddSingleton<IVapidTokenCache, MemoryVapidTokenCache>();
             services.AddHttpClient<PushServiceClient>();
@@ -73,6 +83,9 @@ namespace WebPushNotif.Demo
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
+
+            //Abilito CORS
+            app.UseCors("CorsPolicy");
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

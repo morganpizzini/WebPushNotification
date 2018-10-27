@@ -31,7 +31,7 @@ namespace WebPushNotif.Demo.Controllers
             var notification = new PushMessage(notificationBody)
             {
                 Topic = "Message Topic",
-                Urgency = PushMessageUrgency.Normal,
+                Urgency = PushMessageUrgency.High,
             };
 
             //ciclo su tutti i sottoscrittori
