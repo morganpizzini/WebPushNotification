@@ -21,7 +21,7 @@ namespace WebPushNotif.Demo.Services
 
         private Task _dequeueMessagesTask;
 
-        public PushNotificationsDequeuer(IPushNotificationsQueue messagesQueue, IPushNotificationService notificationService,
+        public PushNotificationsDequeuer(IPushNotificationsQueue messagesQueue, IPushNotificationService notificationService
             )//IServiceProvider serviceProvider)
         {
             _messagesQueue = messagesQueue;
