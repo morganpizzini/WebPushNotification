@@ -26,12 +26,12 @@ namespace WebPushNotif.Demo.Controllers
         public IActionResult SendNotification()
         {
             //creo il corpo della notifica
-            var notificationBody = "{\"notification\":{\"title\":\"Angular News\",\"body\":\"Newsletter Available!\",\"icon\":\"assets/main-page-logo-small-hat.png\",\"vibrate\":[100,50,100],\"data\":{\"dateOfArrival\":1537101991875,\"primaryKey\":1},\"actions\":[{\"action\":\"explore\",\"title\":\"Go to the site\"}]}}";
+            var notificationBody = "{\"notification\":{\"title\":\"Angular News\",\"body\":\"Newsletter Available!\",\"icon\":\"assets/icons/icon-96x96.png\",\"vibrate\":[100,50,100],\"data\":{\"dateOfArrival\":1537101991875,\"primaryKey\":1,\"url\":\"http://google.com\"},\"actions\":[{\"action\":\"explore\",\"title\":\"Go to the site\"},{\"action\":\"second\",\"title\":\"Second action\",\"icon\":\"assets/icons/icon-72x72.png\"}]}}";
 
             var notification = new PushMessage(notificationBody)
             {
                 Topic = "Message Topic",
-                Urgency = PushMessageUrgency.High,
+                Urgency = PushMessageUrgency.Low,
             };
 
             //ciclo su tutti i sottoscrittori
@@ -44,5 +44,6 @@ namespace WebPushNotif.Demo.Controllers
             }
             return Ok(true);
         }
+
     }
 }

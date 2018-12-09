@@ -21,9 +21,9 @@ namespace WebPushNotif.Demo.Services
         {
             var _options = new
             {
-                Subject = "https://youdomain.com",
-                PublicKey = "YOUR_PUBLIC_KEY",
-                PrivateKey = "YOUR_PRIVATE_KEY"
+               Subject = "https://youdomain.com",
+               PublicKey = "YOUR_PUBLIC_KEY",
+               PrivateKey = "YOUR_PRIVATE_KEY"
             };
 
             _pushClient = pushClient;
